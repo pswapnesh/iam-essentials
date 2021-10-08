@@ -15,10 +15,13 @@ exposure_function_list = getmembers(exposure, isfunction)
 new_functions = []
 for f in exposure_function_list:
     f[1].__annotations__ = {'image': ImageData,'return': ImageData}
+    f[1].__name__ = f[0]
+    print(f[1].__name__)
     new_functions.append(magicgui(f[1]))
 
 
-viewer = napari.Viewer()
-#viewer = napari.view_image(np.random.rand(64, 64), name="My Image")
-viewer.window.add_dock_widget(new_functions, area='right')
+# viewer = napari.Viewer()
+# #viewer = napari.view_image(np.random.rand(64, 64), name="My Image")
+# viewer.window.add_dock_widget(new_functions, area='right')
+
 
