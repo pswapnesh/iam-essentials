@@ -1,4 +1,4 @@
-# deepnap
+# Scikit-image essentials for napari
 
 [![License](https://img.shields.io/pypi/l/misic-napari-plugin.svg?color=green)](https://github.com/pswap/misic-napari-plugin/raw/master/LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/misic-napari-plugin.svg?color=green)](https://pypi.org/project/misic-napari-plugin)
@@ -6,7 +6,7 @@
 [![tests](https://github.com/pswap/misic-napari-plugin/workflows/tests/badge.svg)](https://github.com/pswap/misic-napari-plugin/actions)
 [![codecov](https://codecov.io/gh/pswap/misic-napari-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/pswap/misic-napari-plugin)
 
-napari plugin for docker based ML APIs
+
 
 ----------------------------------
 
