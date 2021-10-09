@@ -12,12 +12,19 @@ from skimage import filters
 from skimage import exposure
 from inspect import getmembers, isfunction
 import napari
+
+def noneTypeHandler(func):
+    def wrapper():
+        if image not None:
+            return func
+    return wrapper
+    
 exposure_function_list = getmembers(exposure, isfunction)
 magic_functions = []
 for f in exposure_function_list:
     func = f[1]
     func.__annotations__ = {'image': ImageData,'return': ImageData}    
-    new_func = magicgui(auto_call=False)(func)
+    new_func = magicgui(auto_call=False)(noneTypeHandler(func))
     new_func.__name__ = f[0]
     magic_functions.append(new_func)
 
