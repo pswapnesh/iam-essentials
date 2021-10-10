@@ -43,7 +43,7 @@ from utils.utils import *
 #     return new_list
 
 exposure_function_list = getmembers(transform, isfunction)
-exposure_function_list = eliminate_functions(exposure_function_list)
+#exposure_function_list = eliminate_functions(exposure_function_list)
 
 # remove function whose output is not image    
 
@@ -52,4 +52,5 @@ exposure_function_list = eliminate_functions(exposure_function_list)
 # filter only function that return images
 for f in exposure_function_list:
     args = inspect.getfullargspec(f[1])
+    args = inspect.signature(f[1])
     print(f[0]," ",args,"\n****\n")
