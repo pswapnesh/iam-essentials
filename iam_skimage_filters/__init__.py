@@ -16,17 +16,9 @@ import inspect
 from utils.utils import *
 
 
-exposure_function_list = getmembers(filters, isfunction)
-exposure_function_list = eliminate_functions(exposure_function_list)
-# filter only function that return images
+function_list = getmembers(filters, isfunction)
+magic_exposure_function_list = prepare_functions(function_list)
 
-magic_exposure_function_list = []
-for f in exposure_function_list:
-    func = f[1]
-    func.__annotations__ = {'image': ImageData,'return': ImageData}    
-    func.__name__ = f[0]
-    new_func = magic_factory(func)
-    magic_exposure_function_list.append(new_func)
 
 @napari_hook_implementation
 def napari_experimental_provide_dock_widget():

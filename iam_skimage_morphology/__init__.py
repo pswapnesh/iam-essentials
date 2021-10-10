@@ -9,14 +9,14 @@ import os
 from napari_plugin_engine import napari_hook_implementation
 from napari.types import ImageData
 from magicgui import magicgui, magic_factory
-from skimage import color
+from skimage import morphology
 from inspect import getmembers, isfunction
 import napari
 import inspect
 from utils.utils import *
 
 
-function_list = getmembers(color, isfunction)
+function_list = getmembers(morphology, isfunction)
 magic_exposure_function_list = prepare_functions(function_list)
 
 

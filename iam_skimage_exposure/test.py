@@ -11,7 +11,7 @@ from napari.types import ImageData
 import numpy as np
 from magicgui import magicgui, magic_factory
 from skimage import filters
-from skimage import exposure
+from skimage import transform
 from inspect import getmembers, isfunction
 import napari
 import inspect
@@ -42,7 +42,7 @@ from utils.utils import *
 #             new_list.append(f)
 #     return new_list
 
-exposure_function_list = getmembers(filters, isfunction)
+exposure_function_list = getmembers(transform, isfunction)
 exposure_function_list = eliminate_functions(exposure_function_list)
 
 # remove function whose output is not image    
@@ -51,5 +51,5 @@ exposure_function_list = eliminate_functions(exposure_function_list)
 #print(args,'image' in args)
 # filter only function that return images
 for f in exposure_function_list:
-    args = inspect.getfullargspec(f[1]).args
-    print(args)
+    args = inspect.getfullargspec(f[1])
+    print(f[0]," ",args,"\n****\n")

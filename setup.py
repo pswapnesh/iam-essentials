@@ -45,6 +45,11 @@ setup(
             'skimage-exposure= iam_skimage_exposure',
             'skimage-filters= iam_skimage_filters',
             'skimage-color= iam_skimage_color',
+            'skimage-segmentation= iam_skimage_segmentation',
+            'skimage-morphology= iam_skimage_morphology',
+            'skimage-feature= iam_skimage_feature',
+            'skimage-transform= iam_skimage_transform',
+            'skimage-restoration= iam_skimage_restoration',            
         ],
     },
 )
