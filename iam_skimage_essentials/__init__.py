@@ -15,7 +15,7 @@ import napari
 
 def noneTypeHandler(func):
     def wrapper(image: ImageData):
-        if image not None:
+        if image is not None:
             return func
     return wrapper
     
