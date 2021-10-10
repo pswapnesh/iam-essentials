@@ -21,9 +21,7 @@ https://napari.org/docs/plugins/index.html
 -->
 
 ## Installation
-
+pip install from this git repo or from the plugin manager.
 
 ## License
-
-Distributed under the terms of the [MIT] license,
-"deepnap" is free and open source software
+Distributed under the terms of the [MIT] license, the nappari plugin "skimage_essentials" is free and open source software
