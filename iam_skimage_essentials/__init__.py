@@ -14,7 +14,7 @@ from inspect import getmembers, isfunction
 import napari
 
 def noneTypeHandler(func):
-    def wrapper():
+    def wrapper(image: ImageData):
         if image not None:
             return func
     return wrapper
