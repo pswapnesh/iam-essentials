@@ -54,7 +54,7 @@ setup(
     # ],
     entry_points={
         'napari.plugin': [
-            'iam-skimage-essentials= iam_skimage_essentials'
+            'skimage-essentials= iam_skimage_essentials'
         ],
     },
 )
