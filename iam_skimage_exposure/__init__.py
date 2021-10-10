@@ -2,6 +2,8 @@ try:
     from ._version import version as __version__
 except ImportError:
     __version__ = "unknown"
+import sys
+sys.path.append('./utils')
 
 import os
 from napari_plugin_engine import napari_hook_implementation
@@ -11,34 +13,35 @@ from skimage import exposure
 from inspect import getmembers, isfunction
 import napari
 import inspect
+from utils.utils import *
 
-def is_ndarray_output(f):
-    '''
-    A bad hack to get if the scikit-image function
-    returns an image.
-    '''
-    search_string = ['ndarray' ,'2-D array']
-    return_string = "Returns"
-    doc = inspect.getdoc(f[1])
-    idx = doc.find(return_string)
-    doc = doc[idx + len(return_string):]
-    idx = doc.find(':')
-    doc = doc[idx + 1 :]
-    idx = doc.find('--')
-    doc = doc[:idx]
-    flag = False
-    for ss in search_string:
-        if ss in doc:
-            flag = True
-    return flag
+# def is_ndarray_output(f):
+#     '''
+#     A bad hack to get if the scikit-image function
+#     returns an image.
+#     '''
+#     search_string = ['ndarray' ,'2-D array']
+#     return_string = "Returns"
+#     doc = inspect.getdoc(f[1])
+#     idx = doc.find(return_string)
+#     doc = doc[idx + len(return_string):]
+#     idx = doc.find(':')
+#     doc = doc[idx + 1 :]
+#     idx = doc.find('--')
+#     doc = doc[:idx]
+#     flag = False
+#     for ss in search_string:
+#         if ss in doc:
+#             flag = True
+#     return flag
 
-def eliminate_functions(func_list):
-    # remove functions starting with "_"
-    new_list = []
-    for f in func_list:
-        if (f[0][0] != '_' ) & (is_ndarray_output(f)):
-            new_list.append(f)
-    return new_list
+# def eliminate_functions(func_list):
+#     # remove functions starting with "_"
+#     new_list = []
+#     for f in func_list:
+#         if (f[0][0] != '_' ) & (is_ndarray_output(f)):
+#             new_list.append(f)
+#     return new_list
 
 # Handle none type image later
 # def noneTypeHandler(func):

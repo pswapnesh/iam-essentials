@@ -27,7 +27,7 @@ use_scm = {"write_to": "iam-skimage-essentials/_version.py"}
 setup(
     name='iam-skimage-essentials',
     author='lcb-iam-pswap',
-    version="0.0.1",
+    version="0.0.2",
     author_email='spanigrahi@imm.cnrs.fr',
     license='MIT',
     url='https://github.com/pswap/iam-skimage-essentials',
@@ -42,7 +42,9 @@ setup(
     setup_requires=['setuptools_scm'],
     entry_points={
         'napari.plugin': [
-            'skimage-exposure= iam_skimage_exposure'
+            'skimage-exposure= iam_skimage_exposure',
+            'skimage-filters= iam_skimage_filters',
+            'skimage-color= iam_skimage_color',
         ],
     },
 )
