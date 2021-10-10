@@ -26,7 +26,7 @@ use_scm = {"write_to": "iam-skimage-essentials/_version.py"}
 
 setup(
     name='iam-skimage-essentials',
-    author='lcb-iam-pswap-le',
+    author='lcb-iam-pswap',
     version="0.0.1",
     author_email='spanigrahi@imm.cnrs.fr',
     license='MIT',
@@ -40,21 +40,9 @@ setup(
     #use_scm_version=use_scm,
     #use_scm_version={'root'       : '..','relative_to': os.path.dirname(__file__)},
     setup_requires=['setuptools_scm'],
-    # classifiers=[
-    #     'Development Status :: 4 - Beta',
-    #     'Intended Audience :: Developers',
-    #     'Framework :: napari',
-    #     'Topic :: Software Development :: Testing',
-    #     'Programming Language :: Python',
-    #     'Programming Language :: Python :: 3',
-    #     'Programming Language :: Python :: 3.7',
-    #     'Programming Language :: Python :: 3.8',
-    #     'Operating System :: OS Independent',
-    #     'License :: OSI Approved :: MIT License',
-    # ],
     entry_points={
         'napari.plugin': [
-            'skimage-essentials= iam_skimage_essentials'
+            'skimage-exposure= iam_skimage_exposure'
         ],
     },
 )
