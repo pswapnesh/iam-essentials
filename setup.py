@@ -27,7 +27,7 @@ use_scm = {"write_to": "iam-skimage-essentials/_version.py"}
 setup(
     name='iam-skimage-essentials',
     author='lcb-iam-pswap',
-    version="0.0.2",
+    version="0.0.3",
     author_email='spanigrahi@imm.cnrs.fr',
     license='MIT',
     url='https://github.com/pswap/iam-skimage-essentials',
