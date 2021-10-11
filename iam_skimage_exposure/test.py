@@ -51,6 +51,14 @@ exposure_function_list = getmembers(transform, isfunction)
 #print(args,'image' in args)
 # filter only function that return images
 for f in exposure_function_list:
-    args = inspect.getfullargspec(f[1])
+    #args = inspect.getfullargspec(f[1])
     args = inspect.signature(f[1])
-    print(f[0]," ",args,"\n****\n")
+    required_params = []
+    sig = str(args)[1:-2]
+    sig = sig.split(',')
+    for a in sig:
+        if "=" in a:
+            continue
+        else:
+            required_params.append(a.replace(' ',''))
+    print(f[0]," ",sig,required_params,"\n****\n")

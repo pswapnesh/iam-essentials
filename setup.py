@@ -49,7 +49,7 @@ setup(
             'skimage-morphology= iam_skimage_morphology',
             'skimage-feature= iam_skimage_feature',
             'skimage-transform= iam_skimage_transform',
-            'skimage-restoration= iam_skimage_restoration',            
+            #'skimage-restoration= iam_skimage_restoration',            
         ],
     },
 )
