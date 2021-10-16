@@ -22,15 +22,15 @@ with open('requirements.txt') as f:
 
 
 # https://github.com/pypa/setuptools_scm
-use_scm = {"write_to": "iam-skimage-essentials/_version.py"}
+use_scm = {"write_to": "iam-essentials/_version.py"}
 
 setup(
-    name='iam-skimage-essentials',
+    name='iam-essentials',
     author='lcb-iam-pswap',
     version="0.0.3",
     author_email='spanigrahi@imm.cnrs.fr',
     license='MIT',
-    url='https://github.com/pswap/iam-skimage-essentials',
+    url='https://github.com/pswap/iam-essentials',
     description='napari plugin for scikit image',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
@@ -42,14 +42,7 @@ setup(
     setup_requires=['setuptools_scm'],
     entry_points={
         'napari.plugin': [
-            'skimage-exposure= iam_skimage_exposure',
-            'skimage-filters= iam_skimage_filters',
-            'skimage-color= iam_skimage_color',
-            'skimage-segmentation= iam_skimage_segmentation',
-            'skimage-morphology= iam_skimage_morphology',
-            'skimage-feature= iam_skimage_feature',
-            'skimage-transform= iam_skimage_transform',
-            #'skimage-restoration= iam_skimage_restoration',            
+            'structure= iam_structure',            
         ],
     },
 )
