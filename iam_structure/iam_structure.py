@@ -20,7 +20,7 @@ def _eigensystem(m00,m01,m11):
     v2 = - (-m00+m11 - b)/(2*m01) #[v2,1]
     return l1,l2,v1,v2
 
-def orientation_by_structure_tensor(image:ImageData,sigma = 3.0) -> LayerDataTuple:
+def iam_orientation(image:ImageData,sigma = 3.0) -> LayerDataTuple:
     '''
     Local orientation of images from structure tensor
     '''
@@ -32,7 +32,7 @@ def orientation_by_structure_tensor(image:ImageData,sigma = 3.0) -> LayerDataTup
     power = 0.5 * (Srr + Scc ) + (l1 - l2)/2
     return [(angles, {'name': 'angles'}),(coherence, {'name': 'coherence'}), (power, {'name': 'power'})]
 
-def show_vectors(angles: ImageData,magnitude: ImageData, use_magnitude = False, visual_scale: int = 20)->Vectors:
+def iam_show_orientation(angles: ImageData,magnitude: ImageData, use_magnitude = False, visual_scale: int = 20)->Vectors:
     '''
     Use angles and magnitude to create a vectors layer
     '''

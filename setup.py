@@ -27,7 +27,7 @@ use_scm = {"write_to": "iam-essentials/_version.py"}
 setup(
     name='iam-essentials',
     author='lcb-iam-pswap',
-    version="0.0.3",
+    version="0.0.0",
     author_email='spanigrahi@imm.cnrs.fr',
     license='MIT',
     url='https://github.com/pswap/iam-essentials',
@@ -42,7 +42,10 @@ setup(
     setup_requires=['setuptools_scm'],
     entry_points={
         'napari.plugin': [
-            'structure= iam_structure',            
+            'segmentation= iam_segmentation',  
+            'morphology= iam_morphology',  
+            'structure= iam_structure',
+            'filters= iam_filters',         
         ],
     },
 )
