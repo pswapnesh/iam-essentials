@@ -45,7 +45,9 @@ setup(
             'segmentation= iam_segmentation',  
             'morphology= iam_morphology',  
             'structure= iam_structure',
-            'filters= iam_filters',         
+            'filters= iam_filters',   
+            'color= iam_color',   
+            'features= iam_features',         
         ],
     },
 )

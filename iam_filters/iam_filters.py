@@ -10,7 +10,7 @@ from utils.utils import *
 def iam_gaussian(image:ImageData, sigma = 1.0,proc_all = False) -> ImageData:
     stack = is_stack(image)
     if stack & proc_all:
-        result = [filters.gaussian(im,sigma) for im in image]
+        result = np.array([filters.gaussian(im,sigma) for im in image])
         return result
     elif stack:
         result = filters.gaussian(image[0],sigma)
@@ -21,7 +21,7 @@ def iam_gaussian(image:ImageData, sigma = 1.0,proc_all = False) -> ImageData:
 def iam_gaussian_laplace(image:ImageData, sigma = 1.0,proc_all = False) -> ImageData:
     stack = is_stack(image)
     if stack & proc_all:
-        result = [ndi.gaussian_laplace(im,sigma) for im in image]
+        result = np.array([ndi.gaussian_laplace(im,sigma) for im in image])
         return result
     elif stack:
         result = ndi.gaussian_laplace(image[0],sigma)
@@ -32,7 +32,7 @@ def iam_gaussian_laplace(image:ImageData, sigma = 1.0,proc_all = False) -> Image
 def iam_laplace(image:ImageData, sigma = 1.0,proc_all = False) -> ImageData:
     stack = is_stack(image)
     if stack & proc_all:
-        result = [filters.laplace(im,sigma) for im in image]
+        result = np.array([filters.laplace(im,sigma) for im in image])
         return result
     elif stack:
         result = filters.laplace(image[0],sigma)
@@ -43,10 +43,10 @@ def iam_laplace(image:ImageData, sigma = 1.0,proc_all = False) -> ImageData:
 def iam_median(image:ImageData, sigma = 1.0,proc_all = False) -> ImageData:
     stack = is_stack(image)
     if stack & proc_all:
-        result = [filters.median(im,sigma) for im in image]
+        result = [ndi.median_filter(im,sigma) for im in image]
         return result
     elif stack:
-        result = filters.median(image[0],sigma)
+        result = ndi.median_filter(image[0],sigma)
     else:
-        result = filters.median(image,sigma)
+        result = ndi.median_filter(image,sigma)
     return result      
